@@ -22,7 +22,7 @@ public class FavoritoBD {
 
     public void listarFavoritos(int usuarioId) {
         String sql = """
-            SELECT c.id, c.nombre, c.artista, c.genero, c.duracion, c.anio_publicacion
+            SELECT c.id, c.nombre, c.artista, c.genero, c.duracion, c.año_publicacion
             FROM favorito f
             JOIN cancion c ON f.cancion_id = c.id
             WHERE f.usuario_id = ?
@@ -38,7 +38,7 @@ public class FavoritoBD {
                     " | Artista: " + rs.getString("artista") +
                     " | Género: " + rs.getString("genero") +
                     " | Duración: " + rs.getInt("duracion") +
-                    " seg | Año: " + rs.getInt("anio_publicacion")
+                    " seg | Año: " + rs.getInt("año_publicacion")
                 );
             }
         } catch (SQLException e) {
