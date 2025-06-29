@@ -50,10 +50,10 @@ public class PlayListBD {
             System.out.println("Error al listar playlists: " + e.getMessage());
         }
     }
-  
+
     public void listarCancionesDePlaylist(int playlistId) {
         String sql = """
-            SELECT c.id, c.nombre, c.artista, c.genero, c.duracion, c.anio_publicacion
+            SELECT c.id, c.nombre, c.artista, c.genero, c.duracion, c.año_publicacion
             FROM playlist_cancion pc
             JOIN cancion c ON pc.cancion_id = c.id
             WHERE pc.playlist_id = ?
@@ -69,7 +69,7 @@ public class PlayListBD {
                     " | Artista: " + rs.getString("artista") +
                     " | Género: " + rs.getString("genero") +
                     " | Duración: " + rs.getInt("duracion") +
-                    " seg | Año: " + rs.getInt("anio_publicacion")
+                    " seg | Año: " + rs.getInt("año_publicacion")
                 );
             }
         } catch (SQLException e) {
