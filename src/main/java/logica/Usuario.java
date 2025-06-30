@@ -3,9 +3,11 @@ package logica;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.Serializable;
 
-public class Usuario {
-	private Scanner sc = new Scanner(System.in);
+public class Usuario implements Serializable {
+    private static final long serialVersionUID = 1L;
+	private transient Scanner sc = new Scanner(System.in);
 	private String nombre;
 	private List<Cancion> favoritos;
 	private List<PlayList> playlists;
